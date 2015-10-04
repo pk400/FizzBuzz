@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int fizzbuzz(int i)
+int recursiveFizzbuzz(int i)
 {
 	if(i > 1) {
 		fizzbuzz(--i);
@@ -25,7 +25,7 @@ int main(void)
 	for(int i=0;i++<100;printf(i%3==0?i%5==0?"fizzbuzz\n":"fizz\n":i%5==0?"buzz\n":"%d\n",i));
 	
 	// Recursive fizzbuzz
-	fizzbuzz(100);
+	recursiveFizzbuzz(100);
 	
 	return 0;
 }
