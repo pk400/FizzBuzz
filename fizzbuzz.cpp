@@ -20,19 +20,14 @@ void iterativeFizzbuzz(int k) {
 int recursiveFizzbuzz(int i)
 {
 	if(i > 1) {
-		fizzbuzz(--i);
-		if(i % 3 == 0 && i % 5 == 0) {
-			puts("fizzbuzz");
-		}
-		else if(i % 3 == 0) {
-			puts("fizz");
-		}
-		else if(i % 5 == 0) {
-			puts("buzz");
-		}
-		else {
+		recursiveFizzbuzz(--i);
+		if(i%3 != 0 && i%5 != 0) {
 			cout << i << '\n';
 		}
+		else {
+			puts((i%3)?"buzz":((i%5)?"fizz":"fizzbuzz"));
+		}
+
 		return i;
 	}
 }
@@ -40,13 +35,13 @@ int recursiveFizzbuzz(int i)
 int main(void)
 {
 	// Iterative fizzbuzz
-	iterativeFizzbuzz(100);
+	//iterativeFizzbuzz(100);
 
 	// Recursive fizzbuzz
 	recursiveFizzbuzz(100);
 	
 	// Tiny fizzbuzz
-	for(int i=0;i++<100;printf(i%3==0?i%5==0?"fizzbuzz\n":"fizz\n":i%5==0?"buzz\n":"%d\n",i));
+	//for(int i=0;i++<100;printf(i%3==0?i%5==0?"fizzbuzz\n":"fizz\n":i%5==0?"buzz\n":"%d\n",i));
 	
 	return 0;
 }
